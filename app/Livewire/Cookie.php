@@ -15,12 +15,23 @@ class Cookie extends Component
         'A journey of a thousand miles begins with a single step.',
     ];
 
+    // Index of currently displaying message
+    /** @locked  */
+    public int $currentIdx = 0;
+
     // Message to display to the visitor
     public string $message;
 
     public function rotate()
     {
-        $this->message = Arr::random($this->messages);
+        $idx = array_rand($this->messages);
+
+        if ($idx !== $this->currentIdx) {
+            $this->currentIdx = $idx;
+            $this->message = $this->messages[$idx];
+        } else {
+            $this->rotate();
+        }
     }
 
     public function mount()
