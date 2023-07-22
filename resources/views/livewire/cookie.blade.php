@@ -1,7 +1,7 @@
 <div>
-    <h1>{{ $message }}</h1>
+    <h2>{{ $message }}</h2>
 
-    <button wire:click="rotate">
+    <button class="button-pink" role="button" wire:click="rotate">
         Surprise Me!
     </button>
 </div>
