@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use Illuminate\Support\Arr;
 use Livewire\Component;
+use Livewire\Features\SupportLockedProperties\Locked;
 
 class Cookie extends Component
 {
@@ -15,9 +15,8 @@ class Cookie extends Component
         'A journey of a thousand miles begins with a single step.',
     ];
 
-    // Index of currently displaying message
-    /** @locked  */
-    public int $currentIdx = 0;
+    #[Locked]
+    public int $currentIndex = 0;
 
     // Message to display to the visitor
     public string $message;
@@ -26,8 +25,8 @@ class Cookie extends Component
     {
         $idx = array_rand($this->messages);
 
-        if ($idx !== $this->currentIdx) {
-            $this->currentIdx = $idx;
+        if ($idx !== $this->currentIndex) {
+            $this->currentIndex = $idx;
             $this->message = $this->messages[$idx];
         } else {
             $this->rotate();
