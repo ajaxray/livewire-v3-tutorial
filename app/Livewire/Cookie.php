@@ -2,19 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Models\Message;
 use Livewire\Component;
 use Livewire\Features\SupportLockedProperties\Locked;
 
 class Cookie extends Component
 {
-    private array $messages = [
-        'Time may fly by. But Memories don\'t.',
-        'Nothing in the world is accomplished without passion.',
-        'The project on your mind will soon gain momentum.',
-        'A dream you have will come true.',
-        'A journey of a thousand miles begins with a single step.',
-    ];
-
     #[Locked]
     public int $currentIndex = 0;
 
@@ -23,11 +16,13 @@ class Cookie extends Component
 
     public function rotate()
     {
-        $idx = array_rand($this->messages);
+        $fortuneMessage = Message::where('is_active', true)
+            ->orderByRaw('RAND()')
+            ->firstOrFail();
 
-        if ($idx !== $this->currentIndex) {
-            $this->currentIndex = $idx;
-            $this->message = $this->messages[$idx];
+        if ($fortuneMessage->id !== $this->currentIndex) {
+            $this->currentIndex = $fortuneMessage->id;
+            $this->message = $fortuneMessage->message;
         } else {
             $this->rotate();
         }
