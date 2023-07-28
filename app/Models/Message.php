@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Message extends Model
 {
+    use HasFactory;
+
+    public $timestamps = false;
+
     protected $fillable = ['message', 'is_active'];
 
     protected $casts = [

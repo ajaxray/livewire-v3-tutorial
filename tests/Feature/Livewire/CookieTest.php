@@ -3,11 +3,23 @@
 namespace Tests\Feature\Livewire;
 
 use App\Livewire\Cookie;
+use App\Models\Message;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class CookieTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        // Artisan::call('migrate');
+        Message::factory()->count(10)->create();
+    }
+
     /** @test */
     public function renders_successfully()
     {
