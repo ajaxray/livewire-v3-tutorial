@@ -1,0 +1,52 @@
+#content { margin: 0 auto; }
+#message-box {
+    padding: 20px;
+    border: 2px solid crimson;
+    border-radius: 8px;
+    background-color: darkmagenta;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;;
+}
+body {background-color: lightyellow}
+h1 {padding: 20px; font-family: cursive; font-size: x-large; color: crimson; text-align: center; }
+h2 {
+    padding: 10px;
+    font-family: cursive; font-size: xx-large; text-align: center;
+    color: white;
+    text-shadow: 0 0 4px yellow;
+}
+
+.button-pink {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: lightyellow;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px; font-weight: 500;
+    height: 40px; line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-pink:hover,
+.button-pink:focus {
+    background-color: darkred;
+    color: white;
+    text-shadow: 0 0 2px white;
+    box-shadow: 0 0 5px deeppink;
+}
+
+@media only screen and (min-width: 768px) {
+    #content {width: 60%;}
+}
