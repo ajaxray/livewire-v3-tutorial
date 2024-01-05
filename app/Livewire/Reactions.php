@@ -3,8 +3,9 @@
 namespace App\Livewire;
 
 use App\Models\Reaction;
+use Livewire\Attributes\Locked;
+use Livewire\Attributes\Reactive;
 use Livewire\Component;
-use Livewire\Features\SupportLockedProperties\Locked;
 
 class Reactions extends Component
 {
@@ -14,9 +15,8 @@ class Reactions extends Component
      * @var array Reaction count for a Cookie message
      */
     #[Locked]
+    #[Reactive]
     public array $reactionCounts;
-
-    public int $cookieId;
 
     public function render()
     {

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Livewire\Reactions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Message extends Model
 {
@@ -20,4 +22,9 @@ class Message extends Model
     protected $attributes = [
         'is_active' => true,
     ];
+
+    public function reactions(): HasMany
+    {
+        return $this->hasMany(Reaction::class);
+    }
 }
