@@ -13,7 +13,7 @@ h2 {
     padding: 10px;
     font-family: cursive; font-size: xx-large; text-align: center;
     color: white;
-    text-shadow: 0 0 4px yellow;
+    text-shadow: 0 0 2px yellow;
 }
 
 .button-pink {
@@ -64,6 +64,16 @@ h2 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
+.reaction-bar .reaction .count {
+    font-size: 14px;
+    color: gold;
+    display: block;
+}
+.reaction-bar .reaction:hover .count {
+    font-weight: bold;
+}
+
 @media only screen and (min-width: 768px) {
     #content {width: 60%;}
 }

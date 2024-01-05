@@ -6,7 +6,7 @@
     </button>
 
     <div style="float: right">
-        <livewire:reactions />
+        <livewire:reactions :$reactionCounts />
     </div>
 
     <div style="clear: both"></div>

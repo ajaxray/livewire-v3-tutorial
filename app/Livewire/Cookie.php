@@ -13,6 +13,7 @@ class Cookie extends Component
 
     // Message to display to the visitor
     public string $message;
+    public array $reactionCounts;
 
     public function rotate()
     {
@@ -26,6 +27,8 @@ class Cookie extends Component
         } else {
             $this->rotate();
         }
+
+        $this->reactionCounts = ['okay' => 6, 'nice' => 23];
     }
 
     public function mount()
