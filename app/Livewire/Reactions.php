@@ -24,9 +24,4 @@ class Reactions extends Component
             'reactionTypes' => array_combine(Reaction::$reactions, $this->symbols)
         ]);
     }
-
-    public function react($reactionType)
-    {
-        $this->dispatch('reacted', $reactionType);
-    }
 }
